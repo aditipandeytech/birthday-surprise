@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Birthday Love Story</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="floating-hearts" aria-hidden="true">
+    ♡　💕　♡　💗　♡　💕
+  </div>
+
+  <main class="book">
+
+    <!-- Screen 1: Welcome -->
+    <section class="screen active" id="welcome">
+      <p class="eyebrow">A little something made with love</p>
+      <div class="big-heart">♡</div>
+      <p class="tag">TO MY KUCHU PUCHU</p>
+      <h1>Happy Birthday,<br><span>Babyyyy!</span></h1>
+      <p class="description">
+        I made something special for my " CHOTUUUU SA BABY
+        "
+      </p>
+      <button onclick="goToScreen('letter')">
+        Open Your Gift 💌
+      </button>
+      <p class="tiny-note">Made with love, just for you ♡</p>
+    </section>
+
+    <!-- Screen 2: Love Letter -->
+    <section class="screen" id="letter">
+      <p class="eyebrow">Page 01 · A little letter</p>
+      <h2>To my favorite human 💌</h2>
+      <div class="letter-paper">
+        <p id="letterText"></p>
+      </div>
+      <button onclick="goToScreen('memories')">
+        Let's See Our Memories 📸
+      </button>
+    </section>
+
+    <!-- Screen 3: Memories -->
+    <section class="screen" id="memories">
+      <p class="eyebrow">Page 02 · Little moments</p>
+      <h2>Our Little Memories 📷</h2>
+      <p class="description">
+        Bubu we dont have any cute photo together that's why i made some placeholders for now, but i promise to fill this page with our memories soon. I love you so much and i hope you have the best birthday ever!
+      </p>
+
+      <div class="memory-grid">
+        <div class="memory">
+         <img src="final_website_images/photo1.png" alt="My favorite person">
+          <p>My favorite person</p>
+        </div>
+       
+<div class="memory">
+    <img src="final_website_images/photo2.png" alt="My happy place">
+    <p>My happy place</p>
+</div>
+
+        <div class="memory">
+          <img src="final_website_images/photo3.png" alt="Us, always">
+          <p>Us, always</p>
+        </div>
+      </div>
+
+      <p class="tiny-note">
+        These are placeholders. We'll add your photos here!
+      </p>
+      <button onclick="goToScreen('balloons')">
+        One Little Game? 🎈
+      </button>
+    </section>
+
+    <!-- Screen 4: Balloon Game -->
+    <section class="screen" id="balloons">
+      <p class="eyebrow">Page 03 · A tiny game</p>
+      <h2>Pop the Love! 🎈</h2>
+      <p class="description">
+        Pop every balloon to discover your surprises.
+      </p>
+
+      <p id="score">Balloons popped: 0 / 5</p>
+      <div class="balloon-area" id="balloonArea">
+        <button class="balloon" data-message="You make me smile! 💗"
+          aria-label="Pop balloon 1">🎈</button>
+        <button class="balloon" data-message="You are my favorite person! 🧸"
+          aria-label="Pop balloon 2">🎈</button>
+        <button class="balloon" data-message="You deserve all the happiness! 🌷"
+          aria-label="Pop balloon 3">🎈</button>
+        <button class="balloon" data-message="Sending you a million kisses! 💋"
+          aria-label="Pop balloon 4">🎈</button>
+        <button class="balloon" data-message="I am so lucky to have you! 💕"
+          aria-label="Pop balloon 5">🎈</button>
+      </div>
+
+      <p id="balloonMessage" class="message" aria-live="polite">
+        Tap a balloon to reveal a message!
+      </p>
+      <button id="finalButton" class="hidden"
+        onclick="goToScreen('surprise')">
+        Open Your Final Surprise 🎁
+      </button>
+    </section>
+
+    <!-- Screen 5: Final Surprise -->
+    <section class="screen" id="surprise">
+      <p class="eyebrow">The last little page · Just for you</p>
+      <h2>A little gift for you 🎁</h2>
+
+      <button id="giftButton" class="gift-button"
+        aria-label="Open your birthday gift">
+        🎁
+      </button>
+
+      <p id="giftHint" class="description">
+        Tap the gift. There's something inside!
+      </p>
+
+      <div id="finalMessage" class="hidden">
+        <div class="big-heart">💗</div>
+        <h2>Happy Birthday, My Love!</h2>
+        <p>
+          May your life be full of happiness, love,
+          adventures and all the beautiful things
+          you deserve. I'm always cheering for you. ♡
+        </p>
+        <p class="signature">With all my love, always 💌</p>
+      </div>
+
+      <button class="secondary" onclick="goToScreen('welcome')">
+        Read Our Story Again ↺
+      </button>
+    </section>
+
+  </main>
+
+</body>
+</html>

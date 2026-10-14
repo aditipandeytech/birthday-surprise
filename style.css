@@ -1,0 +1,374 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  --cream: #fff9f0;
+  --pink: #f8dce5;
+  --rose: #bd6682;
+  --dark: #624653;
+  --paper: #fffdf9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 14px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 10% 15%, #f8e2e9 0, transparent 30%),
+    radial-gradient(circle at 90% 85%, #f4e7d6 0, transparent 30%),
+    var(--cream);
+  color: var(--dark);
+  font-family: "DM Sans", sans-serif;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 23px;
+  background: var(--rose);
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: #a95370;
+}
+
+button:focus-visible {
+  outline: 3px solid #7c3d57;
+  outline-offset: 4px;
+}
+
+.book {
+  position: relative;
+  width: min(100%, 680px);
+  min-height: 570px;
+  padding: 24px;
+  border: 1px solid #f0d5dc;
+  border-radius: 26px;
+  background: rgba(255, 253, 249, 0.96);
+  box-shadow: 0 15px 45px #9a62751c;
+  overflow: hidden;
+}
+
+.screen {
+  display: none;
+  min-height: 515px;
+  padding: 25px 8px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: appear 0.55s ease both;
+}
+
+.screen.active {
+  display: flex;
+}
+
+.eyebrow,
+.tag,
+.tiny-note {
+  color: var(--rose);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+}
+
+.tag {
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.25;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+}
+
+h1 span {
+  color: var(--rose);
+  font-style: italic;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+  margin: 12px 0;
+}
+
+.description {
+  max-width: 420px;
+  line-height: 1.8;
+  color: #826d75;
+}
+
+.big-heart {
+  color: #d77997;
+  font-size: 5rem;
+  line-height: 1.2;
+  animation: heartbeat 1.4s infinite;
+}
+
+.tiny-note {
+  margin-top: 22px;
+  letter-spacing: 0.3px;
+  font-size: 0.75rem;
+}
+
+.floating-hearts {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #d77997;
+  opacity: 0.65;
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+
+.letter-paper {
+  width: min(100%, 470px);
+  min-height: 180px;
+  padding: 25px;
+  margin: 18px 0 24px;
+  text-align: left;
+  line-height: 1.9;
+  white-space: pre-line;
+  background: #fff7e9;
+  border: 1px dashed #d9a6b5;
+  border-radius: 8px;
+  box-shadow: 4px 5px 0 #f3e1df;
+  transform: rotate(-1deg);
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin: 18px 0;
+}
+
+.memory {
+  padding: 8px 8px 12px;
+  background: white;
+  border: 1px solid #f0e4dd;
+  box-shadow: 0 5px 12px #75515b12;
+  transform: rotate(-2deg);
+}
+
+.memory:nth-child(2) {
+  transform: rotate(2deg) translateY(8px);
+}
+
+.memory:nth-child(3) {
+  transform: rotate(-1deg);
+}
+
+
+.photo-placeholder {
+    width: 100%;
+    height: 220px;
+    min-height: 0;
+    display: grid;
+    place-items: center;
+    background: #f9e5eb;
+    font-size: 2rem;
+    overflow: hidden;
+}
+
+.photo-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+  min-height: 110px;
+  display: grid;
+  place-items: center;
+  background: #f9e5eb;
+  font-size: 2rem;
+
+
+.memory p {
+  margin: 10px 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.85rem;
+}
+
+.balloon-area {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0 10px;
+}
+
+.balloon {
+  padding: 5px;
+  background: transparent;
+  font-size: 3rem;
+  animation: float 2s ease-in-out infinite;
+}
+
+.balloon:nth-child(even) {
+  animation-delay: 0.5s;
+}
+
+.balloon:hover {
+  background: #fcecf1;
+}
+
+.balloon.popped {
+  animation: pop 0.25s ease forwards;
+  pointer-events: none;
+}
+
+.message {
+  min-height: 52px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--rose);
+}
+
+.gift-button {
+  margin: 18px 0;
+  padding: 12px;
+  background: transparent;
+  font-size: 5rem;
+  animation: float 2s infinite ease-in-out;
+}
+
+.gift-button:hover {
+  background: #fff0f4;
+}
+
+.signature {
+  color: var(--rose);
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.secondary {
+  margin-top: 20px;
+  background: #f1dce3;
+  color: #754b5b;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pop {
+  to {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+@media (max-width: 480px) {
+  .book {
+    padding: 15px;
+    min-height: 550px;
+  }
+
+  .screen {
+    min-height: 510px;
+    padding: 25px 3px;
+  }
+
+  .memory-grid {
+    gap: 7px;
+  }
+
+  .memory {
+    padding: 5px 5px 9px;
+  }
+
+  .photo-placeholder {
+    min-height: 85px;
+    font-size: 1.5rem;
+  }
+
+.photo-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+  .memory p {
+    font-size: 0.72rem;
+  }
+
+  .letter-paper {
+    padding: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+}
+
+.memory {
+    min-width: 0;
+}
+
+.memory img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    object-position: center;
+}
